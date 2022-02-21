@@ -1,11 +1,11 @@
 ## Few-shot Image Classification
 
 ## Table of contents
-* [Few-shot Classification](#Few-shot-classification)
+* [**Few-shot Classification**](#Few-shot-classification)
 	* [A closer look at Few-shot Classification](#A-closer-look-at-Few-shot-Classification)
-* [Few-shot Matching](#Few-shot-matching)
+* [**Few-shot Matching**](#Few-shot-matching)
 	* [LGM-Net: Learning to Generate Matching Networks for Few-shot Learning](#LGM-Net-Learning-to-Generate-Matching-Networks-for-Few-shot-Learning)
-* [Resources](#Resources)
+* [**Resources**](#Resources)
 
 ## Few-shot classification
 ### A closer look at Few-shot Classification
