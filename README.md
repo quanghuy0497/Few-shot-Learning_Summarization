@@ -1,4 +1,4 @@
-## Few-Shot Learning Summarization
+## Few-Shot Learning Summarization  <!-- omit in toc -->
 This repository summaries Few-shot learning in the Computer Vision aspect, focusing on image classification, object detection, and object segmentation. 
 
 The main purpose of this list is to review and recap several exemplary models/methods/approaches to capture the overview of Few-shot Learning in Computer Vision, focusing on main approach and model pipeline of these model. For better intuition, please read the original paper and review the implementation code which are attached along with the review/recap sections. If there are any review mistakes or inaccurate information, please feel free to inform me.
@@ -9,22 +9,19 @@ This repository will be updated frequently.
 
 You can also check my previous paper summarization list [Transformer4Vision](https://github.com/quanghuy0497/Transformer4Vision) if you interested.
 
-## Table of contents
-* [**Basic concepts**](#Basic-concepts)
-	* [**_Definition_**](#Definition)
-	* [**_N-way K-shot setting_**](#N-way-K-shot-setting)
-	* [**_Episodic learning_**](#Episodic-learning)
-	* [**_Common approaches_**](#Common-approaches)
-* [**Basic Few-shot Learning Algorithms**](#Basic-Few-shot-Learning-Algorithms)
-	* [**_Siamese Network_**](#Siamese-Network)
-	* [**_Matching Network_**](#Matching-Network)
-	* [**_Prototypical Networks_**](#Prototypical-Networks)
-	* [**_Model-Agnostic Meta Learning (MAML)_**](#Model-Agnostic-Meta-Learning-MAML)
-* [**Specific topic**](#Specific-topic)
-	* [**_Image Classification_**](https://github.com/quanghuy0497/Few-shot_Learning_Papers/tree/main/Few-shot%20Image%20Classification)
-	* [**_Object Detection_**](https://github.com/quanghuy0497/Few-shot_Learning_Papers/tree/main/Few-shot%20Object%20Detection)
-	* [**_Object Segmentation_**](https://github.com/quanghuy0497/Few-shot_Learning_Papers/tree/main/Few-shot%20Object%20Segmentation)
-* [**References**](#References)
+## Table of contents  <!-- omit in toc -->
+- [**Basic concepts**](#basic-concepts)
+	- [_Definition_](#definition)
+	- [_N-way K-shot setting_](#n-way-k-shot-setting)
+	- [_Episodic learning_](#episodic-learning)
+	- [_Common approaches_](#common-approaches)
+- [**Basic Few-shot Learning Algorithms**](#basic-few-shot-learning-algorithms)
+	- [_Siamese Network_](#siamese-network)
+	- [_Matching Network_](#matching-network)
+	- [_Prototypical Networks_](#prototypical-networks)
+	- [_Model-Agnostic Meta Learning (MAML)_](#model-agnostic-meta-learning-maml)
+- [**Specific topic**](#specific-topic)
+- [**References**](#references)
 
 ### **Basic concepts**
 #### _Definition_
@@ -72,7 +69,7 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 		- Or in some methods, instead of using gradient descent, an optimizer can be learned to output the update **_θo_** directly.
 		![](Images/optimization_based_2.png)  
 
-### Basic Few-shot Learning Algorithms
+### **Basic Few-shot Learning Algorithms**
 #### _Siamese Network_
 + **Paper**: https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf
 ![](Images/siamese-conv-net.png)  
@@ -100,7 +97,7 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 	- Given a par of images [A, B], contrastive loss takes the feature extraction of A and calculates its distance to B. If A and B _are in the same class_, then the distance is _minimized_ by the loss, and if otherwise, the distance is _maximized_.
 	- During training, A and B are fed to the model with their ground truth relationship **_Y_**. Y equals 1 if A and B are the same class and 0 otherwise. Mathematically, the constative loss is calculated by the formula: 
 		- `L = Y*D^2 + (1-Y)*max(margin - D, 0)^2`  
-			Where D = _D[f(A), f(A)]_ and the _margin_ is used to "tighten" the constraint: if A and B are dissimilar, then their distance should be at least _margin_ or the contrastive loss will be incurred
+			Where `D = D[f(A), f(A)]` and the _margin_ is used to "tighten" the constraint: if A and B are dissimilar, then their distance should be at least _margin_ or the contrastive loss will be incurred
 + **Code**: https://github.com/fangpin/siamese-pytorch
 + **Reference**: https://jdhao.github.io/2017/03/13/some_loss_and_explanations/
 
@@ -156,9 +153,9 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 + **Code**: https://github.com/cbfinn/maml
 
 ### **Specific topic**
-+ [**_Image Classification_**](https://github.com/quanghuy0497/Few-shot_Learning_Papers/tree/main/Few-shot%20Image%20Classification): To be updated
-+ [**_Object Detection_**](https://github.com/quanghuy0497/Few-shot_Learning_Papers/tree/main/Few-shot%20Object%20Detection): To be updated
-+ [**_Object Segmentation_**](https://github.com/quanghuy0497/Few-shot_Learning_Papers/tree/main/Few-shot%20Object%20Segmentation): To be updated
++ [**_Image Classification_**](https://github.com/quanghuy0497/Few-shot_Learning_Summarization/tree/main/Few-shot%20Image%20Classification): To be updated
++ [**_Object Detection_**](https://github.com/quanghuy0497/Few-shot_Learning_Summarization/tree/main/Few-shot%20Object%20Detection): To be updated
++ [**_Object Segmentation_**](https://github.com/quanghuy0497/Few-shot_Learning_Summarization/tree/main/Few-shot%20Object%20Segmentation): To be updated
 
 ### **References**
 + https://github.com/Duan-JM/awesome-papers-fewshot#cv (**papers**, **recourse**, **repo**, **blog**,...)
@@ -170,11 +167,9 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 	- Pretraining & Fine-tuning: https://www.youtube.com/watch?v=U6uFOIURcD0
 + Meta-Learning: Learning to Learn Fast: https://lilianweng.github.io/lil-log/2018/11/30/meta-learning.html
 + Understanding Few-shot lerning in CV: https://neptune.ai/blog/understanding-few-shot-learning-in-computer-vision
-+ Meta-learning algorithms for Few-Shot Computer
-Vision: https://arxiv.org/pdf/1909.13579.pdf
++ Meta-learning algorithms for Few-Shot Compute Vision: https://arxiv.org/pdf/1909.13579.pdf
 + A Concise Review of Recent Few-shot Meta-learning Methods: https://arxiv.org/pdf/2005.10953.pdf
-+ Generalizing from a Few Examples: A Survey on Few-Shot
-Learning: https://arxiv.org/pdf/1904.05046.pdf
++ Generalizing from a Few Examples: A Survey on Few-Shot Learning: https://arxiv.org/pdf/1904.05046.pdf
 + On Episodes, Prototypical Networks, and Few-Shot Learning: https://arxiv.org/pdf/2012.09831.pdf
 
 
@@ -187,3 +182,5 @@ Learning: https://arxiv.org/pdf/1904.05046.pdf
 <br><br>
 <br><br>
 These notes were created by [quanghuy0497](https://quanghuy0497.github.io/)@2022
+
+
