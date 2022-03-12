@@ -52,7 +52,7 @@ Many papers often work with **_different notations and abbeviations_** which mig
   - **_W_base_**: learnable weight for base classes
   - **_W_novel_**: learnable weight for novel class.
   - **_θ_**: usually is the learning parameter for **_C_**
-  - **_φ_**: usually is the learning parameter for **_Q_**
+  - **_φ_**: usually is the learning parameter for **_G_**
 
 ### **Basic concepts**
 #### _Definition_
