@@ -25,7 +25,7 @@ This repository will be updated frequently. You can also check my previous paper
 ### **Preface, Abbeviations, and Notations**
 Many equations/formulas in this review repository _**might differ from the original paper**_. Not only because of the inability of rendering latex math on markdown Github (there are several ways to solve this but it will be very complex) but also I wish to keep these formulas as simple as possible for beginners (like me) to understand these papers.
 
-Many papers often work with **_different notations and abbeviations_** which might bring confusion to the reader (many refer to use _K_ for the number of classes; _N_ for the number of support examples and vice versa). To provide a uniform notation for summarizing papers and convenient for writing/comparing, I will use **_the following abbreviations and notations list_** throughout my papers' summarization.
+Many papers often work with **_different notations and abbeviations_** which might bring confusion to the reader (many refer to use _K_ for the number of classes; _N_ for the number of support examples and vice versa). To provide a uniform notation for summarizing papers and convenient for writing/comparing, I will use **_the following abbreviations and notations list_** throughout my papers' summarization. Specific symbols/notations for particular paper will be defined with their own recap section.
 
 + **Abbeviations**:
   - **_FSL_**: Few-shot learning
@@ -40,17 +40,19 @@ Many papers often work with **_different notations and abbeviations_** which mig
   - **_D_base_**: Base class data
   - **_D_novel_**: Novel unseen class data
   - **_F_**: usually stand for Feature extractor
+  - **_G_**: weight generator
   - **_K_**: number of few-shot example on _novel classes_/size of support set **_S_** per _novel class_
-  - **_N_**: number of classes/list of classes
+  - **_N, n_**: number of classes/list of classes
   - **_N_base_** : number/list of base classes
   - **_N_novel_**: number/list of novel classes
-  - **_Q_**: query set for few-shot testing
-  - **_S_**: support set for few-shot learning
+  - **_Q, q_**: query set for few-shot testing
+  - **_S, s_**: support set for few-shot learning
   - **_Te_**: testing episodic batch
-  - **_W_**: learnable weight for specific task
+  - **_W, w_**: learnable weight for specific task
   - **_W_base_**: learnable weight for base classes
   - **_W_novel_**: learnable weight for novel class.
   - **_θ_**: usually is the learning parameter for **_C_**
+  - **_φ_**: usually is the learning parameter for **_Q_**
 
 ### **Basic concepts**
 #### _Definition_
