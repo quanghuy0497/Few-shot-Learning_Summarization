@@ -43,10 +43,14 @@
 + **Summary (TL;DR)**:
 	+ Develope a visual learning system that can _learn novel classes_ but still able to recognize _both_ novel & base classes
 	+ Consist of 2 main parts:
-    	- **_Few-shot classification weight generator_** => dynamically generate class weight _W_novel_ for novel classes with few-shot setting (<= 5 Shot)
-    	- **_ConvNet-based recognition model_** (including a _Feature extractor_ and a _Classifier_) => recognize both base and novel classes (by combining _W_base_ and _W_novel_)
-    + Improve _ConvNet-based classifier_ with **_cosine similarity function_** => better feature representation, better unified feature representation between base and novel classes.
-    + Improve _FS Weight generator_ with an **_attention mechanism_** => explicitly exploits the acquired past knowledge from base classes => significant boost on the novel class performance (especially on one-shot)
+    	+ **_Few-shot classification weight generator (G)_** => dynamically generate class weight _W_novel_ for novel classes with few-shot setting (<= 5 Shot)
+        	- Improve by a **_cosine similarity function_** => better feature representation, better unified feature representation between base and novel classes.
+    	+ **_ConvNet-based recognition model_** (including a _feature extractor **F**_ and a _classifier **C**_) => recognize both base and novel classes (by combining _W_base_ and _W_novel_)
+            - Improve by an **_attention mechanism_** => explicitly exploits the acquired past knowledge from base classes => significant boost on the novel class performance (especially on one-shot)
+    + Including 2 training stages:
+        + **_First stage_**: Training **_F_** and **_C_** on _base data_
+        + **_Second stage_**: Using a small random classes from base data as _"fake novel classes"_ data to train **_G_**, then fine-tune **_C_** with weights from "fake novel" and _"remain base classes"_ data => can recognize both base and novel classes.
+          + Replace _"fake novel"_ by _"actual novel"_ data in testing
 	+ Evaluated on Mini-ImageNet, achieved _56.20% Acc_ on 5-way 1-shot and _73.00% Acc_ on 5-way 5-shot setting
 + **Approach**:
 	![](Images/Dynamic_FSL_without_Forgetting.png)  
