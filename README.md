@@ -35,7 +35,7 @@ Many papers often work with **_different notations and abbeviations_** which mig
   - **_FLIS_**: Few-shot Instance Segmentation
   - **_N-way K-shot_**: few-shot learning on **_N_** classes with **_K_** examples for each. Described in detailed in the follow section.
 + **Notations**:
-  - **_Be_**: episode batch
+  - **_Be_**: training episodic batch
   - **_C_**: usually stand for Classifier
   - **_D_base_**: Base class data
   - **_D_novel_**: Novel unseen class data
@@ -46,6 +46,7 @@ Many papers often work with **_different notations and abbeviations_** which mig
   - **_N_novel_**: number/list of novel classes
   - **_Q_**: query set for few-shot testing
   - **_S_**: support set for few-shot learning
+  - **_Te_**: testing episodic batch
   - **_W_**: learnable weight for specific task
   - **_W_base_**: learnable weight for base classes
   - **_W_novel_**: learnable weight for novel class.
