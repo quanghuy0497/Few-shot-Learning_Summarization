@@ -50,6 +50,7 @@ Many papers often work with **_different notations and abbeviations_** which mig
   - **_W_**: learnable weight for specific task
   - **_W_base_**: learnable weight for base classes
   - **_W_novel_**: learnable weight for novel class.
+  - **_θ_**: usually is the learning parameter for **_C_**
 
 ### **Basic concepts**
 #### _Definition_
