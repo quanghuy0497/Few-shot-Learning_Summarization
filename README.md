@@ -1,15 +1,14 @@
 ## Few-Shot Learning Summarization  <!-- omit in toc -->
 This repository summaries Few-shot learning in the Computer Vision aspect, focusing on image classification, object detection, and object segmentation. 
 
-The main purpose of this list is to review and recap several exemplary models/methods/approaches to capture the overview of Few-shot Learning in Computer Vision, focusing on main approach and model pipeline of these model. For better intuition, please read the original paper and review the implementation code which are attached along with the review/recap sections. If there are any review mistakes or inaccurate information, please feel free to inform me.
+The main purpose of this list is to review and recap several exemplary models/methods/approaches to capture the overview of Few-shot Learning in Computer Vision, focusing on main approaches, learning method, and model pipeline of these model. I understand it is really difficult to recap a whole paper but I will try my best to make it as easy to read as possible. For better intuition, please read the original paper and review the implementation code which are attached along with the review/recap sections. If there are any review mistakes or inaccurate information, please feel free to inform me.
 
 Currently, my priority is summarizing papers about **_few-shot image classification_** first, then few-shot learning papers in the areas of **_object detection_** and **_semantic/instance object segmentation_** later.
 
-This repository will be updated frequently.
-
-You can also check my previous paper summarization list [Transformer4Vision](https://github.com/quanghuy0497/Transformer4Vision) if you interested.
+This repository will be updated frequently. You can also check my previous paper summarization list [Transformer4Vision](https://github.com/quanghuy0497/Transformer4Vision) if you interested.
 
 ## Table of contents  <!-- omit in toc -->
+- [**Preface, Abbeviations, and Notations**](#preface-abbeviations-and-notations)
 - [**Basic concepts**](#basic-concepts)
 	- [_Definition_](#definition)
 	- [_N-way K-shot setting_](#n-way-k-shot-setting)
@@ -23,9 +22,37 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 - [**Specific topic**](#specific-topic)
 - [**References**](#references)
 
+### **Preface, Abbeviations, and Notations**
+Many equations/formulas in this review repository _**might differ from the original paper**_. Not only because of the inability of rendering latex math on markdown Github (there are several ways to solve this but it will be very complex) but also I wish to keep these formulas as simple as possible for beginners (like me) to understand these papers.
+
+Many papers often work with **_different notations and abbeviations_** which might bring confusion to the reader (many refer to use _K_ for the number of classes; _N_ for the number of support examples and vice versa). To provide a uniform notation for summarizing papers and convenient for writing/comparing, I will use **_the following abbreviations and notations list_** throughout my papers' summarization.
+
++ **Abbeviations**:
+  - **_FSL_**: Few-shot learning
+  - **_FLC_**: Few-shot classification
+  - **_FLOD_**: Few-shot Object Detection
+  - **_FLSS_**: Few-shot Semantic Segmentation
+  - **_FLIS_**: Few-shot Instance Segmentation
+  - **_N-way K-shot_**: few-shot learning on **_N_** classes with **_K_** examples for each. Described in detailed in the follow section.
++ **Notations**:
+  - **_Be_**: episode batch
+  - **_C_**: usually stand for Classifier
+  - **_D_base_**: Base class data
+  - **_D_novel_**: Novel unseen class data
+  - **_F_**: usually stand for Feature extractor
+  - **_K_**: number of few-shot example on _novel classes_/size of support set **_S_** per _novel class_
+  - **_N_**: number of classes/list of classes
+  - **_N_base_** : number/list of base classes
+  - **_N_novel_**: number/list of novel classes
+  - **_Q_**: query set for few-shot testing
+  - **_S_**: support set for few-shot learning
+  - **_W_**: learnable weight for specific task
+  - **_W_base_**: learnable weight for base classes
+  - **_W_novel_**: learnable weight for novel class.
+
 ### **Basic concepts**
 #### _Definition_
-+ Few-shot Learning is an example of **meta-learning**, where a learner is trained on several related data during the **_meta-training phase_**, so that it can _generalize well to unseen (but related) data_ with _just few examples_ during the **_meta-testing phase_**. 
++ **_Few-shot Learning_** is an example of **meta-learning**, where a learner is trained on several related data during the **_meta-training phase_**, so that it can _generalize well to unseen (but related) data_ with _just few examples_ during the **_meta-testing phase_**. 
 	- In other words, Few-shot Learning aims to develop models that can learn to identify unseen _(query)_ objects with just a few _(support)_ examples.
 	- This is why Few-Shot Learning (and meta-learning) is also known as a **learning to learn** method
 + An effective approach to the Few-Shot Learning problem is to **learn a global representation for various tasks** and train tasks specific classifier/detector on top of this representation for specific task.
@@ -33,10 +60,10 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 #### _N-way K-shot setting_
 + Suppose we have a dataset **D** that is split into two subsets **_D_base_** and **_D_novel_** with two disjointed class label set **_N_based_** and **_N_novel_**. In the cases of few-shot learning, a model is trained to learn some prior or share knowledge from **_D_base_**, then modified on tasks on **_D_novel_**.
 	- In other words, _D_base_ is used _for training model_ in the meta-training phrase, and _D_model_ is used _for testing model_ in the meta-testing phase
-+ For each set **_D_base_** and **_D_novel_**, we can split the data into 2 set including:
-	- **A support set S** for learning: which is a small data that contains only few _**K** labeled_ samples for each of _**N**_ classes
-	- **A query set Q** for predicting: which is a small _unlabeled_ data that share _the same set_ of _**N**_ classes with **S**
-	- Our purpose is classifying _Q_ query images into these _N_ classes based on **S** support images.
++ For **_D_novel_**, we can split the data into 2 set including:
+	- **A support set S** for learning: which is a small data that contains only few _**K** labeled_ samples for each of _**N_novel**_ classes
+	- **A query set Q** for predicting: which is a small _unlabeled_ data that share _the same set_ of _**N_novel**_ classes
+	- Our purpose is classifying _Q_ query images into these _N_novel_ classes based on **S** support images.
 + A Few-shot Learning setting with support set _S_ includes _N_ classes and _K_ samples is called _**N-way K-shot**_
 	- One-shot Learning is the setting with _**K = 1**_
 	- An example of 2-way 4-shot setting in Few-shot:
@@ -53,7 +80,7 @@ You can also check my previous paper summarization list [Transformer4Vision](htt
 	- Note that the classes from meta-training and meta-testing are disjoint with each other.
 	![](Images/episodic_learning.jpeg)  
 #### _Common approaches_
-- **_Notation_**:
+- **_Preface_**:
 	- Rather than training to recognize specific objects in the training phase, we train the model to learn the similarity and classify/recognize _**N_base**_ classes with _**D_base(Q, S)**_.
 	- Then the model can use this knowledge to learn to recognize unseen _**N_novel**_ classes in _**D_novel(Q)**_ based on the provided information from the _**D_test(S)**_.
 	- In the case of few-shot learning, a _**meta-learner**_ is trained to learn prior knowledge from **_D_base_**, and then, its parameter is modified with the on a specific task on **_D_novel_** using a _**base-learner**_
