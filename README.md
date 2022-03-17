@@ -5,7 +5,7 @@ The main purpose of this list is to review and recap several exemplary models/me
 
 Currently, my priority is summarizing papers about **_few-shot image classification_** first, then few-shot learning papers in the areas of **_object detection_** and **_semantic/instance object segmentation_** later.
 
-This repository will be updated frequently. You can also check my previous paper summarization list [Transformer4Vision](https://github.com/quanghuy0497/Transformer4Vision) if you interested.
+This repository will be updated frequently. You can also check my previous paper summarization list [Transformers4Vision](https://github.com/quanghuy0497/Transformers4Vision) if you interested.
 
 ## Table of contents  <!-- omit in toc -->
 - [**Preface, Abbeviations, and Notations**](#preface-abbeviations-and-notations)
