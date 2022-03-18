@@ -164,7 +164,7 @@ Many papers often work with **_different notations and abbeviations_** which mig
 		- Therefore, the closer _**f(Q)**_ is to any _**V_c**_, the more likely **Q** is to be in this class.
 	+ To optimize the training process, Prototypiccal Networks use the negative log-likelihood **_L = -logP(y = c|Q)_**. The loss computing process is presented in detail below:  
 		![](Images/prototypical_algorithm.png)  
-+ **Code**: https://github.com/orobix/Prototypical-Networks-for-Few-shot-Learning-PyTorch
++ **Code**: https://github.com/jakesnell/prototypical-networks
 
 #### _Model-Agnostic Meta Learning (MAML)_
 + **Paper**: https://arxiv.org/pdf/1703.03400.pdf
@@ -181,7 +181,8 @@ Many papers often work with **_different notations and abbeviations_** which mig
 			where **_β_** is the step size
 	- The detail of MAML full algorithms is presented in detail below:
 		![](Images/MAML_algorithm.png)  
-+ **Code**: https://github.com/cbfinn/maml
++ **Code**: https://github.com/dragen1860/MAML-Pytorch
+    + A more simpler implementation: https://github.com/tristandeleu/pytorch-meta/tree/master/examples/maml
 
 ### **Specific topic**
 + [**_Image Classification_**](https://github.com/quanghuy0497/Few-shot_Learning_Summarization/tree/main/Few-shot%20Image%20Classification): To be updated
