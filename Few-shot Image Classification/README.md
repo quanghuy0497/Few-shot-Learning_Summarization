@@ -3,17 +3,10 @@
 ## Table of contents <!-- omit in toc -->
 
 - [**Few-shot classification**](#few-shot-classification)
-<<<<<<< HEAD
   - [A closer look at Few-shot Classification](#a-closer-look-at-few-shot-classification)
   - [Dynamic Few-Shot Visual Learning without Forgetting](#dynamic-few-shot-visual-learning-without-forgetting)
 - [**Few-shot Matching**](#few-shot-matching)
   - [LGM-Net: Learning to Generate Matching Networks for Few-shot Learning](#lgm-net-learning-to-generate-matching-networks-for-few-shot-learning)
-=======
-	- [A closer look at Few-shot Classification](#a-closer-look-at-few-shot-classification)
-	- [Dynamic Few-Shot Visual Learning without Forgetting](#dynamic-few-shot-visual-learning-without-forgetting)
-- [**Few-shot Matching**](#few-shot-matching)
-	- [LGM-Net: Learning to Generate Matching Networks for Few-shot Learning](#lgm-net-learning-to-generate-matching-networks-for-few-shot-learning)
->>>>>>> fc650dfdabc983117dfb864513d1cb34d1993584
 - [**Resources**](#resources)
 
 ## **Few-shot classification**
